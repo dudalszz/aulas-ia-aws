@@ -1,12 +1,27 @@
-#Desafio
+def registrar_notas(): 
+    notas = []
+    while True: 
+        try: 
+            entrada = input("Digite a nota do aluno (ou 'fim' para encerrar): ")
+            if entrada.lower() == 'fim':
+                break 
 
-#Criar um programa para calcular o valor da gorjeta, baseado no valor total da conta e a porcentagem desejada
+            nota = float(entrada)
+            if 0 <= nota <= 10: 
+                notas.append(nota)
+                print(f"Nota registrada: {nota:.2f}")  # Exibe cada nota digitada
+            else:
+                print("Nota inválida, digite um valor de 0 a 10")
+    
+        except ValueError:
+            print("Entrada inválida. Por favor, digite um número ou 'fim'.")
 
-def calcular_gorjeta(valor_conta, porcentagem_gorgeta):
-    gorjeta = valor_conta * (porcentagem_gorgeta /100)
-    return round(gorjeta, 2)
+    # Após sair do loop, exibe a média e total de notas
+    if notas:
+        media = sum(notas) / len(notas)
+        print(f"\nMédia da turma: {media:.2f}")
+        print(f"Total de notas válidas registradas: {len(notas)}")
+    else:
+        print("Nenhuma nota registrada.")
 
-total_conta = 100.00
-porcentagem = 15
-gorjeta = calcular_gorjeta(total_conta, porcentagem)
-print(f"Para uma conta de R${total_conta: .2f}, a gorjeta de {porcentagem}% é R${gorjeta: .2f}")
+registrar_notas()
