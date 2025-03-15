@@ -1,5 +1,5 @@
-#Desafio
-#Criar um programa que verifique a maioridade
+#Desafio 
+#Criar um programa que verifique a idade e maioridade
 
 #Passo 1: Criar uma variável
 #Passo 2: Criar uma estrutura de condição para verificar a idade
