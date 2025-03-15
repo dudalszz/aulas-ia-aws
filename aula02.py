@@ -1,17 +1,22 @@
-#Desafio
-#Criar um programa que verifique a maioridade
+#função para adicionar pessoas á lista
+def adicionar_pessoa(lista, nome, idade, profissao):
+    pessoa = {"nome": nome, "idade": idade, "profissao": profissao }
+    lista.append(pessoa)
 
-#Passo 1: Criar uma variável
-#Passo 2: Criar uma estrutura de condição para verificar a idade
-#Passo 3: Exibir a frase adequada de acordo com a idade da pessoa.
+#função para mostrar as pessoas da lista
 
-idade = int(input("Digite sua idade:"))
+def exibir_pessoas(lista):
+    print("Lista de pessoas cadastradas")
+    for pessoa in lista:
+        print(f"Nome: {pessoa['nome']}, Idade: {pessoa['idade']}, Profissao: {pessoa['profissao']}")
 
-if idade >= 18: 
-    print("Você é maior de idade");
+#lista para armazenar pessoas
+pessoas = []
 
-elif idade >= 12:
-    print("Você é adolescente");
+#adicionando pessoas em uma lista
+adicionar_pessoa(pessoas, "Ana", 25, "Engenheira")
+adicionar_pessoa(pessoas, "Bruno", 30, "Professor")
+adicionar_pessoa(pessoas, "Carla", 22, "Médica")
 
-else:
-    print("Você é uma criança")
+#exibindo a lista de pessoas
+exibir_pessoas(pessoas)
