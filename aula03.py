@@ -1,36 +1,17 @@
 #Desafio
-#Criar uma calculadora para realizar operções básicas de matemática em Python
+#Criar um programa que verifique a maioridade
 
-#Requisitos
-# 1 - A operação matemática deve ser realizada entre dois números
-# 2 - As operações básicas válidas são: + - * /
-# 3 - O programa deve tratar entradas inválidas 
+#Passo 1: Criar uma variável
+#Passo 2: Criar uma estrutura de condição para verificar a idade
+#Passo 3: Exibir a frase adequada de acordo com a idade da pessoa.
 
-#Criando uma função de calculadora
+idade = int(input("Digite sua idade:"))
 
-def calculadora():
-    while True: 
-        try: 
-            num1 = float(input("Digite o primeiro número:"))
-            num2 = float(input("Digite o segundo número:"))
-            operacao = input("Digite a operação(+,-,*,/):")
+if idade >= 18: 
+    print("Você é maior de idade");
 
-            if operacao == '+':
-                resultado = num1 + num2
-            elif operacao == '-':
-                resultado = num1 - num2
-            elif operacao == '*':
-                resultado = num1 * num2
-            elif operacao == '/':
-                resultado = num1 / num2
-            else:
-                raise ValueError
-            
-            print(f"Resultado:{resultado}")
-            break
-        except ValueError as e:
-            print(f"Erro: {e}. Tente novamente")
-        except ZeroDivisionError: 
-            print("Erro: Não é permitido dividir por zero. Tente novamente")
-        
-calculadora()        
+elif idade >= 12:
+    print("Você é adolescente");
+
+else:
+    print("Você é uma criança")        
