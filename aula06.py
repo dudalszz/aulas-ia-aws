@@ -1,15 +1,12 @@
-def is_palindramo(texto):
-    texto_limpo = ''.join(char.lower()
-                          for char in texto 
-                          if char.isalnum())
-    return texto_limpo == texto_limpo[:: -1]
+#Desafio
 
-frase = "subi no onibus"
-resultado = is_palindramo(frase)
+#Criar um programa para calcular o valor da gorjeta, baseado no valor total da conta e a porcentagem desejada
 
-if resultado == True:
-    resposta = "Sim"
-else:
-    resposta = "Não"
+def calcular_gorjeta(valor_conta, porcentagem_gorgeta):
+    gorjeta = valor_conta * (porcentagem_gorgeta /100)
+    return round(gorjeta, 2)
 
-print(f"'{frase}' é um palindramo? {resposta}")
+total_conta = 100.00
+porcentagem = 15
+gorjeta = calcular_gorjeta(total_conta, porcentagem)
+print(f"Para uma conta de R${total_conta: .2f}, a gorjeta de {porcentagem}% é R${gorjeta: .2f}")
