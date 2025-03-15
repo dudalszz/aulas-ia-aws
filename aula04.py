@@ -1,29 +1,36 @@
-def registrar_notas(): 
-    notas = []
+#Desafio
+#Criar uma calculadora para realizar operções básicas de matemática em Python
+
+#Requisitos
+# 1 - A operação matemática deve ser realizada entre dois números
+# 2 - As operações básicas válidas são: + - * /
+# 3 - O programa deve tratar entradas inválidas 
+
+#Criando uma função de calculadora
+
+def calculadora():
     while True: 
         try: 
-            entrada = input("Digite a nota do aluno (ou 'fim' para encerrar): ")
-            if entrada.lower() == 'fim':
-                break 
+            num1 = float(input("Digite o primeiro número:"))
+            num2 = float(input("Digite o segundo número:"))
+            operacao = input("Digite a operação(+,-,*,/):")
 
-            nota = float(entrada)
-            if 0 <= nota <= 10: 
-                notas.append(nota)
-                print(f"Nota registrada: {nota:.2f}")  # Exibe cada nota digitada
+            if operacao == '+':
+                resultado = num1 + num2
+            elif operacao == '-':
+                resultado = num1 - num2
+            elif operacao == '*':
+                resultado = num1 * num2
+            elif operacao == '/':
+                resultado = num1 / num2
             else:
-                print("Nota inválida, digite um valor de 0 a 10")
-    
-        except ValueError:
-            print("Entrada inválida. Por favor, digite um número ou 'fim'.")
-
-    # Após sair do loop, exibe a média e total de notas
-    if notas:
-        media = sum(notas) / len(notas)
-        print(f"\nMédia da turma: {media:.2f}")
-        print(f"Total de notas válidas registradas: {len(notas)}")
-    else:
-        print("Nenhuma nota registrada.")
-
-registrar_notas()
-
-
+                raise ValueError
+            
+            print(f"Resultado:{resultado}")
+            break
+        except ValueError as e:
+            print(f"Erro: {e}. Tente novamente")
+        except ZeroDivisionError: 
+            print("Erro: Não é permitido dividir por zero. Tente novamente")
+        
+calculadora()
